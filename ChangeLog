@@ -1,0 +1,87 @@
+Change Log
+==========
+
+
+## 2.0.0 (2022-10-28)
+
+Changes:
+
+* The extension has been ported to `libnautilus-extension-4`
+
+
+## 1.0.6 (2021-09-21)
+
+Changes:
+
+* Added Dutch translation
+
+
+## 1.0.5 (2021-09-03)
+
+Changes:
+
+* `AM_GNU_GETTEXT_VERSION([0.21])` has been replaced with
+  `AM_GNU_GETTEXT_VERSION([0.19])` in `configure.ac`
+* A typo has been fixed
+
+
+## 1.0.4 (2021-05-27)
+
+Changes:
+
+* Internationalization does not depend on **XDG intltool** anymore, but only on
+  **GNU gettext**
+
+
+## 1.0.3 (2021-05-24)
+
+Changes:
+
+* Use of `fprintf()` for logging has been dropped in favor of GLib's
+  `g_message()`
+* A small bug in the build system that caused `make distcheck` not to function
+  properly has been fixed
+
+
+## 1.0.2 (2021-05-06)
+
+Changes:
+
+* Code review
+
+
+## 1.0.1 (2021-05-03)
+
+Changes:
+
+* Code review in the build system and the extension source code
+* Package main repository has been moved to
+  https://gitlab.gnome.org/madmurphy/nautilus-launch
+
+
+## 1.0.0 (2021-04-28)
+
+Changes:
+
+* Use `dngettext()` for the plural forms of `gettext` strings
+* Package review and fix this as the first stable major release (1.0.0)
+
+
+## 0.1.2 (2020-10-20)
+
+Changes:
+
+* Use `--disable-static` as the default `configure` option
+
+
+## 0.1.1 (2020-10-09)
+
+Changes:
+
+* Messages and translations
+
+
+## 0.1.0 (2020-10-08)
+
+**Nautilus Launch** has been published.
+
