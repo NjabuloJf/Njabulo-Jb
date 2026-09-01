@@ -1,6 +1,6 @@
 
 <p>
-<a href="https://njabulobot.vercel.app/" target="_blank" rel="noopener noreferrer">
+<a href="njabulo-ai.vercel.app/" target="_blank" rel="noopener noreferrer">
 <img src="https://img.shields.io/badge/getting-bot-purple?style=social&logo=WhatsApp" alt="Njabulo Jb" />
 </a>
 </p>
