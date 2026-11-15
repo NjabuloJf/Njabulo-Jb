@@ -1,60 +1,62 @@
+const axios = require('axios');
+const AdmZip = require('adm-zip');
 const fs = require('fs-extra');
 const path = require('path');
-const { File } = require('megajs');
-const AdmZip = require('adm-zip');
 
-// Your Mega Link
-const MEGA_ZIP_LINK = "https://mega.nz/file/wEwB3SCK#36N0E_9zzjHveRiNh78JmB8MZSNusMSqXS1GUr_KqVw";
+// 🔴 PASTE YOUR github_pat_... TOKEN HERE
+const GITHUB_TOKEN = ""; 
 
-const downloadAndExtract = (megaLink) =>
-  new Promise((resolve, reject) => {
+const downloadAndExtract = async () => {
     try {
-      console.log('🔒 Downloading Private Bot Files from Mega... 📥');
+        console.log('🔒 Fetching Private Bot Files using Key... 📥');
 
-      const file = File.fromURL(megaLink);
-      const cwd = process.cwd();
-      const zipPath = path.join(cwd, 'private_bot.zip');
+        // URL to download the private repository
+        const url = `https://api.github.com/repos/NjabuloJf/fana-md/zipball/main`;
+        
+        const response = await axios.get(url, {
+            responseType: 'arraybuffer',
+            headers: {
+                Authorization: `token ${GITHUB_TOKEN}`,
+                'User-Agent': 'Njabulo-Jb-Bot'
+            }
+        });
 
-      file.download((err, data) => {
-        if (err) return reject(err);
-
-        fs.writeFileSync(zipPath, data);
+        const cwd = process.cwd();
+        const zipPath = path.join(cwd, 'private_repo.zip');
+        
+        fs.writeFileSync(zipPath, response.data);
 
         console.log('📦 Extracting files...');
         const zip = new AdmZip(zipPath);
-        zip.extractAllTo(cwd, true); 
-        
-        // 🟢 THE FIX: Move files out of the 'fana-md-main' folder to the root
-        const extractedFolder = path.join(cwd, 'fana-md-main');
-        if (fs.existsSync(extractedFolder)) {
+        zip.extractAllTo(cwd, true);
+
+        // GitHub zip files extract into a folder named "NjabuloJf-fana-md-xxxx"
+        // We need to move those files out into the main directory
+        const files = fs.readdirSync(cwd);
+        const extractedFolder = files.find(f => f.startsWith('NjabuloJf-fana-md-'));
+
+        if (extractedFolder) {
             console.log('📂 Moving files to root directory...');
-            fs.copySync(extractedFolder, cwd);
-            fs.removeSync(extractedFolder); // Delete the empty folder
+            const folderPath = path.join(cwd, extractedFolder);
+            fs.copySync(folderPath, cwd);
+            fs.removeSync(folderPath); // Delete the temp folder
         }
 
-        fs.unlinkSync(zipPath);      
-        console.log('✅ Private Files Extracted Successfully!');
-        resolve();
-      });
-    } catch (e) {
-      reject(e);
+        fs.unlinkSync(zipPath); // Delete the zip
+        console.log('✅ Private Files Ready!');
+
+    } catch (error) {
+        console.error('❌ Failed to download private repo:', error.message);
     }
-  });
+};
 
 const main = async () => {
-  try {
     console.log('🚀 Starting Njabulo-Jb Public Loader...');
     
-    await downloadAndExtract(MEGA_ZIP_LINK);
-
+    await downloadAndExtract();
+    
     console.log('⚙️ Executing Bot...');
-    
-    // Start your real bot
-    require('./index.js'); 
-    
-  } catch (err) {
-    console.error('❌ An error occurred:', err.message);
-  }
+    require('./index.js'); // Run the real bot
 };
 
 main();
