@@ -1,0 +1,112 @@
+{
+  "name": "Njabulo-Jb",
+  "description": "🤖 WhatsApp Bot with commands folder support",
+  "repository": "",
+  "logo": "https://files.catbox.moe/dfe0h0.jpg",
+  "keywords": [
+    "whatsapp-bot",
+    "nodejs",
+    "baileys",
+    "whatsapp",
+    "bot",
+    "njabulomini"
+  ],
+    "env": {
+    "PREFIX": {
+      "description": "🔠 Choose your prefix of bot",
+      "value": ".",
+      "required": true
+    },
+    "LANGUAGE": {
+      "description": "🌍 Choose your bot language\n🇬🇧 en - English\n🇿🇼 sn - Shona\n🇿🇼 nd - Ndebele\n🇿🇦 af - Afrikaans\n🇿🇦 zu - Zulu\n🇿🇦 xh - Xhosa\n🇵🇹 pt - Portuguese\n🇰🇪 sw - Swahili\n🇮🇳 hi - Hindi\n🇮🇶 ar - Arabic\n🇫🇷 fr - French\n🇪🇸 es - Spanish\n🇨🇳 zh - Chinese\n🇩🇪 de - German\n🇯🇵 ja - Japanese\n🇰🇷 ko - Korean\n🇷🇺 ru - Russian\n🇮🇹 it - Italian",
+      "value": "en",
+      "required": false
+    },
+    "AUTO_READ_STATUS": {
+      "description": "♻️ Your contact status will be read automatically",
+      "value": "no",
+      "required": false
+    },
+    "AUTO_LIKE_STATUS": {
+      "description": "🎊 Enter yes for your bot to auto like status",
+      "value": "no",
+      "required": true
+    },
+    
+    "BOT_NAME": {
+      "description": "👤 Put a name for your bot",
+      "value": "NJABULO JB",
+      "required": false
+    },
+
+    "PUBLIC_MODE": {
+      "description": "🌐 Type yes to put your bot on public mode or no to put it on private mode",
+      "value": "yes",
+      "required": false
+    },
+
+    "HEROKU_APP_NAME": {
+      "description": "👥 Insert your heroku APP NAME",
+      "value": "",
+      "required": false
+    
+    },
+    "SESSION_ID": {
+      "description": "📃 Put your session ID with njabulo~ prefix",
+      "value": "",
+      "required": true
+    },
+    "OWNER_NAME": {
+      "description": "👤 Your Name",
+      "required": false,
+      "value": ""
+    },
+    "NUMERO_OWNER": {
+      "description": "🍥 Your number, don't put '+' and put your area code",
+      "required": true,
+      "value": ""
+    },
+
+    "STARTING_BOT_MESSAGE": {
+      "description": "💬 If you don't want starting bot message put no else put yes",
+      "required": false,
+      "value": "yes"
+    },
+    "PRESENCE": {
+      "description": "⬇️ Mark your presence: 1 for online, 2 for typing, 3 for recording",
+      "value": "",
+      "required": false
+    },
+
+    "PM_PERMIT": {
+      "description": "🔒 Allow PM commands (yes/no)",
+      "value": "no",
+      "required": false
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-activestorage-preview"
+    },
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "stack": "heroku-26"
+}
+
+
+
