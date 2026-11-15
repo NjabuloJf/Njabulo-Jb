@@ -3,7 +3,7 @@ const path = require('path');
 const { File } = require('megajs');
 const AdmZip = require('adm-zip');
 
-// Your Mega Link is inserted here
+// Your Mega Link
 const MEGA_ZIP_LINK = "https://mega.nz/file/wEwB3SCK#36N0E_9zzjHveRiNh78JmB8MZSNusMSqXS1GUr_KqVw";
 
 const downloadAndExtract = (megaLink) =>
@@ -18,15 +18,21 @@ const downloadAndExtract = (megaLink) =>
       file.download((err, data) => {
         if (err) return reject(err);
 
-        // Save the zip file
         fs.writeFileSync(zipPath, data);
 
-        // Extract the zip
         console.log('📦 Extracting files...');
         const zip = new AdmZip(zipPath);
-        zip.extractAllTo(cwd, true); // true = overwrite existing files
-        fs.unlinkSync(zipPath);      // Delete the zip after extracting
+        zip.extractAllTo(cwd, true); 
+        
+        // 🟢 THE FIX: Move files out of the 'fana-md-main' folder to the root
+        const extractedFolder = path.join(cwd, 'fana-md-main');
+        if (fs.existsSync(extractedFolder)) {
+            console.log('📂 Moving files to root directory...');
+            fs.copySync(extractedFolder, cwd);
+            fs.removeSync(extractedFolder); // Delete the empty folder
+        }
 
+        fs.unlinkSync(zipPath);      
         console.log('✅ Private Files Extracted Successfully!');
         resolve();
       });
@@ -39,12 +45,11 @@ const main = async () => {
   try {
     console.log('🚀 Starting Njabulo-Jb Public Loader...');
     
-    // Download and extract the private files
     await downloadAndExtract(MEGA_ZIP_LINK);
 
     console.log('⚙️ Executing Bot...');
     
-    // 🔴 RUN YOUR MAIN FILE (change to ./index.js if that is your main file)
+    // Start your real bot
     require('./index.js'); 
     
   } catch (err) {
