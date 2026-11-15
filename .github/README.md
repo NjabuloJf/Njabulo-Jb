@@ -1,5 +1,3 @@
-
-
 <div align="center">
   
   <!-- Big WhatsApp Icon -->
@@ -7,18 +5,37 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Bot" width="150" height="150">
   </a>
   
-  <br>
-  <br>
+  <br><br>
 
-  <!-- Big Beautiful Button -->
+  <!-- Beautiful Gradient, Glowing, Round Button -->
   <a href="https://wa.me/26777821911" target="_blank">
-    <img src="https://img.shields.io/badge/Get_Started_Bot-25D366?style=for-the-badge&logo=whatsapp&logoColor=white&labelColor=128C7E" alt="Get Started Bot" height="50">
+    <svg xmlns="http://www.w3.org/2000/svg" width="280" height="60" viewBox="0 0 280 60" style="cursor: pointer;">
+      <defs>
+        <!-- Colors for the gradient (Green -> Blue -> Purple) -->
+        <linearGradient id="btn-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#25D366; stop-opacity:1" />
+          <stop offset="50%" style="stop-color:#1E88E5; stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#8E24AA; stop-opacity:1" />
+        </linearGradient>
+        <!-- Glow effect -->
+        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="4" result="blur" />
+          <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+      </defs>
+      
+      <!-- The Rounded Box (rx and ry make it a pill shape) -->
+      <rect x="5" y="5" width="270" height="50" rx="25" ry="25" fill="url(#btn-grad)" filter="url(#glow)" />
+      
+      <!-- The Text inside the button -->
+      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="16" fill="#FFFFFF" letter-spacing="1">
+        🚀 GET STARTED BOT
+      </text>
+    </svg>
   </a>
 
-  <br>
-  <br>
+  <br><br>
   
-  <!-- Your Bot Name -->
   <h1>Njabulo-Jb WhatsApp Bot</h1>
   <p><i>Your all-in-one AI and Downloader WhatsApp Bot!</i></p>
 
