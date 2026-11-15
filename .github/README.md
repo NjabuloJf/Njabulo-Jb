@@ -1,9 +1,30 @@
 
-<p>
-<a href="https://njabulobot.vercel.app" target="_blank" rel="noopener noreferrer">
-<img src="https://img.shields.io/badge/start-bot-purple?style=social&logo=whatsapp" alt="Njabulo Jb" />
-</a>
-</p>
+
+<div align="center">
+  
+  <!-- Big WhatsApp Icon -->
+  <a href="https://wa.me/26777821911" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Bot" width="150" height="150">
+  </a>
+  
+  <br>
+  <br>
+
+  <!-- Big Beautiful Button -->
+  <a href="https://wa.me/26777821911" target="_blank">
+    <img src="https://img.shields.io/badge/Get_Started_Bot-25D366?style=for-the-badge&logo=whatsapp&logoColor=white&labelColor=128C7E" alt="Get Started Bot" height="50">
+  </a>
+
+  <br>
+  <br>
+  
+  <!-- Your Bot Name -->
+  <h1>Njabulo-Jb WhatsApp Bot</h1>
+  <p><i>Your all-in-one AI and Downloader WhatsApp Bot!</i></p>
+
+</div>
+
+
 
 <table>
 <tr>
