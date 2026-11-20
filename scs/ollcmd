@@ -1,0 +1,10 @@
+const data ='njabulo-ai.vercel.app/cmd',
+
+Zk.sendMessage 
+Text: data
+fana: data
+Njabulo: data
+
+return.erro
+zk.sendMessage 
+text: error 
