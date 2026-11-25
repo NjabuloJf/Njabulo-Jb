@@ -4,7 +4,8 @@
 
 <!-- Banner or Logo -->
 <img src="https://raw.githubusercontent.com/NjabuloJf/njabulo-data/main/njabuloimg/api.png" alt="Njabulo API Hub" width="200" style="border-radius: 50%;" />
-
+  <br>
+  <br>
   <!-- Big Beautiful Button -->
   <a href="https://njabulo-ai.vercel.app" target="_blank">
     <img src="https://img.shields.io/badge/Get_Started_Bot-25D366?style=for-the-badge&logo=whatsapp&logoColor=white&labelColor=128C7E" alt="Get Started Bot" height="50">
