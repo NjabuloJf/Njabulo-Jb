@@ -1,12 +1,9 @@
-<div align="center">
-  
-  <!-- Big WhatsApp Icon -->
-  <a href="https://njabulo-ai.vercel.app" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Bot" width="150" height="150">
-  </a>
-  
-  <br>
-  <br>
+
+
+  <div align="center">
+
+<!-- Banner or Logo -->
+<img src="https://raw.githubusercontent.com/NjabuloJf/njabulo-data/main/njabuloimg/api.png" alt="Njabulo API Hub" width="200" style="border-radius: 50%;" />
 
   <!-- Big Beautiful Button -->
   <a href="https://njabulo-ai.vercel.app" target="_blank">
